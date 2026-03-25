@@ -1,0 +1,24 @@
+package materiales;
+public class Revista extends Material {
+    private int numeroEdicion;
+    private String mesPublicacion;
+    public Revista(String codigo, String titulo, String autor, int anioPublicacion,
+                   int numeroPaginas, int numeroEdicion, String mesPublicacion) {
+        super(codigo, titulo, autor, anioPublicacion, numeroPaginas);
+        this.numeroEdicion = numeroEdicion;
+        this.mesPublicacion = mesPublicacion;
+    }
+    public int getNumeroEdicion() { return numeroEdicion; }
+    public String getMesPublicacion() { return mesPublicacion; }
+    public void setNumeroEdicion(int numeroEdicion) { this.numeroEdicion = 
+numeroEdicion; }
+    public void setMesPublicacion(String mesPublicacion) { this.mesPublicacion = 
+mesPublicacion; }
+    @Override
+    public String getTipoMaterial() { return "Revista"; }
+    @Override
+    public String toString() {
+        return super.toString() + String.format("\n   Edición #%d | Mes: %s",
+                numeroEdicion, mesPublicacion);
+    }
+}
